@@ -12,8 +12,7 @@
         http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"
 	default-autowire="byName" default-lazy-init="false">
-
-	<context:annotation-config />
+	<!-- 注解依赖注入spring容器 -->
 	<context:component-scan base-package="com">
 		<context:include-filter type="regex"
 			expression="com.dao" />
@@ -22,7 +21,11 @@
 		<context:include-filter type="regex"
 			expression="com.controller" />
 	</context:component-scan>
+	
+	<!-- 配置文件注入 -->
 	<context:property-placeholder location="classpath:jdbc.properties" />
+	
+	<!-- 注入事务管理器   -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
@@ -96,6 +99,7 @@
 		</property>
 	</bean>
 	
+	<!-- springmvc view注入 -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"

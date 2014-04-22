@@ -21,6 +21,8 @@
 		<version.slf4j>1.6.1</version.slf4j>
 		<version.log4j>1.2.16</version.log4j>
 		<mysql.version>5.1.18</mysql.version>
+		<javassist.version>3.12.0.GA</javassist.version>
+		<jackson.version>1.9.10</jackson.version>
 		<!-- 主要插件依赖的版本定义 -->
 		<yuicompressor-maven-plugin>1.3.2</yuicompressor-maven-plugin>
 		<maven-jetty-plugin.version>6.1.26</maven-jetty-plugin.version>
@@ -137,17 +139,17 @@
 		<dependency>
 			<groupId>javassist</groupId>
 			<artifactId>javassist</artifactId>
-			<version>3.12.0.GA</version>
+			<version>${javassist.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>
-			<version>1.9.10</version>
+			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.10</version>
+			<version>${jackson.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
